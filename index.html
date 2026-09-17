@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- ============ META TAGS ============ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Author / Ownership -->
+  <meta name="author" content="Anant Mani Tripathi" />
+  <meta name="creator" content="Anant Mani Tripathi" />
+  <meta name="publisher" content="Anant Mani Tripathi" />
+  <meta name="copyright" content="© 2026 Anant Mani Tripathi. All rights reserved." />
+  <meta name="designer" content="Anant Mani Tripathi" />
+  <meta name="developer" content="Anant Mani Tripathi" />
+
+  <!-- Application identity -->
+  <meta name="application-name" content="Quelvion" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Quelvion" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Indexing allowed -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- SEO -->
+  <meta name="description" content="Quelvion — a premium AI assistant for business. Ask questions, upload files, use voice, in English, Hindi, or Hinglish." />
+  <meta name="keywords" content="Quelvion, AI assistant, AI chat, Hindi AI, Hinglish AI, business AI, Anant Mani Tripathi" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Quelvion — Premium AI Assistant" />
+  <meta property="og:description" content="A premium AI assistant for business. Ask anything in English, Hindi, or Hinglish." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Quelvion" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quelvion — Premium AI Assistant" />
+  <meta name="twitter:description" content="A premium AI assistant for business. Ask anything in English, Hindi, or Hinglish." />
+
+  <title>Quelvion — Premium AI Assistant</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236ea8ff'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='system-ui' font-weight='800'>Q</text></svg>" />
+</head>
+
+<body class="app-body">
+
+  <div id="app" class="app" hidden>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside id="sidebar" class="sidebar" aria-label="Chat history sidebar">
+      <div class="sidebar-head">
+        <div class="brand">
+          <span class="brand-mark sm">Q</span>
+          <span class="brand-name">Quelvion</span>
+        </div>
+        <button class="icon-btn" id="closeSidebar" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <button class="btn primary block" id="newChat" aria-label="Start new chat">
+        <span class="plus">+</span> New chat
+      </button>
+
+      <div class="search">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search chats…"
+          aria-label="Search conversations"
+          autocomplete="off"
+        />
+      </div>
+
+      <nav id="convList" class="conv-list" aria-label="Conversations"></nav>
+
+      <div class="sidebar-foot">
+        <button
+          class="user-chip"
+          id="userMenu"
+          aria-haspopup="menu"
+          aria-expanded="false"
+        >
+          <span class="avatar" id="avatar">A</span>
+          <span class="user-name" id="userName">Anant</span>
+          <span class="chev">▾</span>
+        </button>
+
+        <div class="menu" id="userMenuBox" hidden role="menu">
+          <button data-act="settings" role="menuitem">Settings</button>
+          <button data-act="theme" role="menuitem">Toggle theme</button>
+          <button data-act="admin" role="menuitem" hidden>Admin panel</button>
+          <button data-act="logout" role="menuitem" class="danger">Sign out</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+
+      <header class="topbar">
+        <button class="icon-btn" id="openSidebar" aria-label="Open sidebar">☰</button>
+        <div class="title" id="convTitle">Quelvion</div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">◐</button>
+        </div>
+      </header>
+
+      <section
+        id="messages"
+        class="messages"
+        aria-live="polite"
+        aria-label="Conversation messages"
+      >
+        <div class="welcome" id="welcome">
+          <div class="welcome-inner">
+            <div class="brand-mark lg">Q</div>
+            <h1>Welcome to Quelvion</h1>
+            <p class="muted">
+              Your AI assistant for questions, files, orders, bookings, and more.
+              Ask anything — in English, Hindi, or Hinglish.
+            </p>
+
+            <div class="suggestions" role="list">
+              <button class="suggestion" data-prompt="Mera order kab aayega?" role="listitem">
+                📦 Mera order kab aayega?
+              </button>
+              <button class="suggestion" data-prompt="Explain this in simple Hindi" role="listitem">
+                🧠 Explain in simple Hindi
+              </button>
+              <button class="suggestion" data-prompt="Book a meeting for tomorrow at 4 PM" role="listitem">
+                📅 Book a meeting tomorrow 4 PM
+              </button>
+              <button class="suggestion" data-prompt="I want to talk to a human agent" role="listitem">
+                🙋 Talk to a human agent
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="composer-wrap">
+        <div class="attachments" id="attachments" aria-live="polite"></div>
+
+        <form id="composer" class="composer" autocomplete="off">
+          <button type="button" class="icon-btn" id="attachBtn" aria-label="Attach file" title="Attach file">📎</button>
+          <input type="file" id="fileInput" hidden multiple accept="image/*,.pdf,.txt,.csv,.json,.docx,.md" />
+
+          <textarea
+            id="input"
+            rows="1"
+            placeholder="Message Quelvion…"
+            aria-label="Message input"
+            spellcheck="true"
+          ></textarea>
+
+          <button type="button" class="icon-btn" id="voiceBtn" aria-label="Voice input" title="Voice input">🎙</button>
+          <button type="button" class="icon-btn stop" id="stopBtn" aria-label="Stop generation" title="Stop generation" hidden>■</button>
+          <button type="submit" class="icon-btn send" id="sendBtn" aria-label="Send message" title="Send">➤</button>
+        </form>
+
+        <div class="composer-hint muted small">
+          Quelvion can make mistakes. Verify important information.
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <button class="icon-btn floating" id="openSidebarFloat" aria-label="Open sidebar" hidden>☰</button>
+
+  <!-- ============ SETTINGS MODAL ============ -->
+  <div class="modal-backdrop" id="settingsModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+      <h2 id="setTitle">Settings</h2>
+
+      <label class="field">
+        <span>Name</span>
+        <input id="setName" type="text" autocomplete="name" />
+      </label>
+
+      <label class="field">
+        <span>Preferred language</span>
+        <select id="setLang">
+          <option value="auto">Auto (match me)</option>
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="hinglish">Hinglish</option>
+        </select>
+      </label>
+
+      <label class="field checkbox">
+        <input type="checkbox" id="setVoice" />
+        <span>Voice replies</span>
+      </label>
+
+      <div class="modal-actions">
+        <button class="btn ghost" id="closeSettings" type="button">Close</button>
+        <button class="btn primary" id="saveSettings" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CONFIRM MODAL ============ -->
+  <div class="modal-backdrop" id="confirmModal" hidden>
+    <div class="modal sm" role="dialog" aria-modal="true" aria-labelledby="cfTitle">
+      <h2 id="cfTitle">Are you sure?</h2>
+      <p class="muted" id="cfText">This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn ghost" id="cfCancel" type="button">Cancel</button>
+        <button class="btn danger" id="cfOk" type="button">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toasts" class="toasts" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
