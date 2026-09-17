@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- ============ META TAGS ============ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Author / Ownership -->
+  <meta name="author" content="Anant Mani Tripathi" />
+  <meta name="creator" content="Anant Mani Tripathi" />
+  <meta name="publisher" content="Anant Mani Tripathi" />
+  <meta name="copyright" content="© 2026 Anant Mani Tripathi. All rights reserved." />
+  <meta name="designer" content="Anant Mani Tripathi" />
+  <meta name="developer" content="Anant Mani Tripathi" />
+
+  <!-- Application identity -->
+  <meta name="application-name" content="Quelvion" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Quelvion" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Indexing allowed -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- SEO -->
+  <meta name="description" content="Sign in to Quelvion — a premium AI assistant for business." />
+  <meta name="keywords" content="Quelvion, AI assistant, login, sign in, Anant Mani Tripathi" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sign in · Quelvion" />
+  <meta property="og:description" content="Sign in to your Quelvion AI assistant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Quelvion" />
+
+  <title>Sign in · Quelvion</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236ea8ff'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='system-ui' font-weight='800'>Q</text></svg>" />
+</head>
+
+<body class="auth-body">
+
+  <button
+    class="icon-btn theme-float"
+    id="themeBtn"
+    aria-label="Toggle theme"
+    title="Toggle theme"
+    type="button"
+  >◐</button>
+
+  <main class="auth-card" role="main">
+
+    <div class="auth-brand">
+      <div class="brand-mark lg">Q</div>
+      <h1>Quelvion</h1>
+      <p class="muted small" id="authSubtitle">Sign in to continue</p>
+    </div>
+
+    <form id="authForm" autocomplete="on" novalidate>
+
+      <label class="field" id="nameField" hidden>
+        <span>Name</span>
+        <input
+          type="text"
+          name="name"
+          id="nameInput"
+          autocomplete="name"
+          placeholder="Anant Mani Tripathi"
+          maxlength="60"
+        />
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input
+          type="email"
+          name="email"
+          id="emailInput"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required
+          maxlength="120"
+        />
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <div class="password-wrap">
+          <input
+            type="password"
+            name="password"
+            id="passwordInput"
+            autocomplete="current-password"
+            placeholder="At least 8 characters"
+            required
+            minlength="8"
+          />
+          <button
+            type="button"
+            class="icon-btn tiny"
+            id="togglePassword"
+            aria-label="Show password"
+            title="Show password"
+          >👁</button>
+        </div>
+      </label>
+
+      <button class="btn primary block" type="submit" id="submitBtn">
+        <span id="submitLabel">Sign in</span>
+        <span id="submitSpinner" class="spinner" hidden aria-hidden="true"></span>
+      </button>
+
+    </form>
+
+    <p class="muted small center">
+      <span id="togglePrompt">Don't have an account?</span>
+      <a href="#" id="toggleAuthLink">Create one</a>
+    </p>
+
+    <div id="authError" class="err" hidden role="alert"></div>
+
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="/login.js"></script>
+</body>
+</html>
